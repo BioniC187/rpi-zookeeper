@@ -26,4 +26,3 @@ RUN chmod +x ${env_installpath}/start.sh
 WORKDIR ${env_installpath}
 
 CMD ["bash", "start.sh"]
-#CMD ["/opt/zookeeper-3.4.13/bin/zkServer.sh", "start-foreground"]
