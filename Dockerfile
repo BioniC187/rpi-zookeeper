@@ -16,7 +16,7 @@ ENV config_maxClientCnxns=${config_maxClientCnxns}
 RUN apt-get update
 RUN apt-get install -y wget
 
-COPY download.sh /tmp
+COPY core/download.sh /tmp
 RUN sh /tmp/download.sh 
 
 RUN tar -xzf ${env_filename}.tar.gz -C /opt
@@ -24,8 +24,8 @@ RUN tar -xzf ${env_filename}.tar.gz -C /opt
 #WORKDIR ${env_installpath}
 
 #COPY var-sub.sh ${env_installpath}
-COPY start.sh ${env_installpath}
-COPY zoo.cfg ${env_installpath}/conf
+COPY core/start.sh ${env_installpath}
+COPY core/zoo.cfg ${env_installpath}/conf
 
 RUN chmod +x ${env_installpath}/start.sh
 #RUN chmod +x bin/zookeeper-server-start.sh
