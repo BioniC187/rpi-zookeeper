@@ -1,9 +1,8 @@
 FROM bionic187/rpi-java:1.0.0-ubuntu-jdk8
 
 ARG zookeeperversion=3.4.13
-
-ENV env_filename=zookeeper-${zookeeperversion}
-ENV env_installpath=/opt/${env_filename}
+ARG env_filename=zookeeper-${zookeeperversion}
+ARG env_installpath=/opt/${env_filename}
 
 ENV env_config_suffix=config_
 ENV env_config_file_relative_path=${env_installpath}/conf/zoo.cfg
